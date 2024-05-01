@@ -6,6 +6,8 @@ _NOTES:_
 
 ## Pre-installation
 
+- Whem setting up encrypted LVM, be careful of selecting "Erase data"
+
 ## Post-installation
 
 - Install gnome
@@ -25,9 +27,33 @@ sudo systemctl start /dev/zram0
 sudo zramctl # check if it's working
 ```
 
+- Enable fstrim.timer if system supports it
+
+```bash
+sudo systemctl enable fstrim.timer
+```
+
 - Setup timeshift
 
-Minimum of 2 snapshots per day, and 2 per boot
+Minimum of 2 to 5 per week.
+
+- Install deps
+
+```bash
+sudo nala install git build-essential cmake clang lldb apt-transport-https fzf unzip python3-pip pipx fonts-recommended ttf-mscorefonts-installer vlc firewalld firewall-config neofetch curl
+```
+
+- cargo
+
+```bash
+cargo install eza bat zoxide fd-find ripgrep
+```
+
+- pnpm
+
+```bash
+pnpm add -g typescript ts-node prettier eslint sass less tree-sitter-cli
+```
 
 - Install latest Neovim
 
