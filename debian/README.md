@@ -10,6 +10,20 @@ _NOTES:_
 
 ## Post-installation
 
+### Setup Nala (aptitude frontend)
+
+- Install Nala
+
+```bash
+sudo apt install nala
+```
+
+- Run nala fetch
+
+```bash
+sudo nala fetch
+```
+
 ### Desktop environment
 
 - Install gnome

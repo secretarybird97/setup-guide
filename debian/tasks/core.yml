@@ -1,0 +1,28 @@
+- name: Install System Packages (build essentials and various utils)
+  become: true
+  apt:
+    name:
+      [
+        "build-essential",
+        "cmake",
+        "pkg-config",
+        "cmake",
+        "clang",
+        "clangd",
+        "lldb",
+        "apt-transport-https",
+        "unzip",
+        "python3-pip",
+        "pipx",
+        "libtool",
+        "ninja-build",
+        "gettext",
+      ]
+  tags:
+    - core
+
+- name: Install rustup
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  tags:
+    - core
+    - rust

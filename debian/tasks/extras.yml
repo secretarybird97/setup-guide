@@ -1,0 +1,33 @@
+- name: Install tools
+  become: true
+  apt:
+    name: ["fzf", "curl", "neofetch", "vim", zsh]
+  tags:
+    - tools
+
+- name: Install rust deps
+  shell: cargo install eza bat zoxide fd-find ripgrep
+  tags:
+    - rust
+
+- name: Install media codecs
+  become: true
+  apt:
+    name: ["libavcodec-extra", "vlc"]
+  tags:
+    - codecs
+
+- name: Install firewall
+  become: true
+  apt:
+    name: ["firewalld", "firewallconfig"]
+  tags:
+    - firewall
+
+- name: Install fonts
+  become: true
+  apt:
+    name:
+      ["fonts-recommended", "ttf-mscorefonts-installer", "fonts-jetbrains-mono"]
+  tags:
+    - fonts
