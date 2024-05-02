@@ -45,6 +45,14 @@ sudo systemctl start /dev/zram0
 sudo zramctl # check if it's working
 ```
 
+### /tmp as TMPFS
+
+- Set /tmp as tmpfs
+
+```bash
+ln -s /usr/share/systemd/tmp.mount /etc/systemd/system/
+```
+
 ### TRIM SSD
 
 - Enable fstrim.timer if system supports it
