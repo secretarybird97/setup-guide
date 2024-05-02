@@ -105,7 +105,7 @@ cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 cryptsetup luksAddKey <device>
 ```
 
-- Make backup (eg. YYYY-MM-DD*luks*$DEVICE_backup)
+- Make backup (eg. YYYY-MM-DD_luks\_$DEVICE_backup)
 
 ```bash
 cryptsetup luksHeaderBackup --header-backup-file <file> <device>
