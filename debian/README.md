@@ -53,6 +53,16 @@ sudo zramctl # check if it's working
 ln -s /usr/share/systemd/tmp.mount /etc/systemd/system/
 ```
 
+### vm.max_map_count
+
+- Add `vm.max_map_count=1048576` to EOF.
+
+- Update sysctl
+
+```bash
+sudo sysctl -p
+```
+
 ### TRIM SSD
 
 - Enable fstrim.timer if system supports it
