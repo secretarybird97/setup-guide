@@ -10,7 +10,9 @@ _NOTES:_
 
 ## Post-installation
 
-### Setup Nala (aptitude frontend)
+### Setup Nala for faster downloads (aptitude frontend)
+
+**ONLY** use Nala for fetching faster mirrors. **Don't** use it directly for installing/managing packages!
 
 - Install Nala
 
@@ -29,7 +31,7 @@ sudo nala fetch
 - Install gnome
 
 ```bash
-sudo nala install gnome-core && sudo purge ifupdown
+sudo apt install gnome-core && sudo purge ifupdown
 ```
 
 After, edit /etc/NetworkManager/NetworkManager.conf and set managed=true
@@ -39,7 +41,7 @@ After, edit /etc/NetworkManager/NetworkManager.conf and set managed=true
 - Enable zram
 
 ```bash
-sudo nala install systemd-zram-generator
+sudo apt install systemd-zram-generator
 sudo systemctl daemon-reload
 sudo systemctl start /dev/zram0
 sudo zramctl # check if it's working
@@ -82,7 +84,7 @@ Minimum of 2 to 5 per week.
 - Install deps
 
 ```bash
-sudo nala install git build-essential cmake clang clangd lldb apt-transport-https fzf unzip libtool ninja-build gettext python3-pip pipx fonts-recommended ttf-mscorefonts-installer fonts-jetbrains-mono libavcodec-extra vlc firewalld firewall-config neofetch curl zsh
+sudo apt install git build-essential cmake clang clangd lldb apt-transport-https fzf unzip libtool ninja-build gettext python3-pip pipx fonts-recommended ttf-mscorefonts-installer fonts-jetbrains-mono libavcodec-extra vlc firewalld firewall-config neofetch curl zsh
 ```
 
 - cargo
@@ -128,7 +130,7 @@ cryptsetup luksHeaderBackup --header-backup-file <file> <device>
 - Install keyutils
 
 ```bash
-sudo nala install keyutils
+sudo apt install keyutils
 ```
 
 - Add `keyscript=decrypt_keyctl` to /etc/crypttab
@@ -139,4 +141,12 @@ sudo nala install keyutils
 
 ```bash
 sudo update-initramfs -k all -c
+```
+
+### [VPN](https://wiki.debian.org/OpenVPN)
+
+- Install OpenVPN protocol
+
+```bash
+sudo apt install openvpn network-manager-openvpn-gnome
 ```
