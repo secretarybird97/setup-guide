@@ -84,13 +84,13 @@ Minimum of 2 to 5 per week.
 - Install deps
 
 ```bash
-sudo apt install git build-essential cmake clang clangd lldb apt-transport-https fzf unzip libtool ninja-build gettext python3-pip pipx fonts-recommended ttf-mscorefonts-installer fonts-jetbrains-mono libavcodec-extra vlc firewalld firewall-config neofetch curl zsh
+sudo apt install git build-essential pkg-config libssl-dev cmake clang clangd lldb apt-transport-https fzf unzip libtool ninja-build gettext python3-pip pipx fonts-recommended ttf-mscorefonts-installer fonts-jetbrains-mono libavcodec-extra vlc firewalld firewall-config neofetch curl zsh
 ```
 
 - cargo
 
 ```bash
-cargo install eza bat zoxide fd-find ripgrep
+cargo install eza bat zoxide fd-find ripgrep cargo-update
 ```
 
 - pnpm
