@@ -22,7 +22,7 @@ sudo hostnamectl set-hostname apollo
 sudo zypper in openSUSE-repos-Tumbleweed
 ```
 
-- Install codecs
+- Install codecs (choose cdn repo)
 
 ```bash
 sudo zypper in opi
@@ -88,10 +88,22 @@ TLP_ENABLE=1
 RESTORE_DEVICE_STATE_ON_STARTUP=1
 ```
 
+### Remove bloatware
+
+```bash
+sudo zypper rm -u evolution polari transmission-gtk patterns-office-office patterns-gnome-gnome_games # etc
+```
+
+- Make sure to add locks to packages
+
+```bash
+sudo zypper al evolution polari transmission-gtk patterns-office-office patterns-gnome-gnome_games # etc
+```
+
 ## Install deps
 
 ```bash
-sudo zypper in clang lldb fd ripgrep protonvpn chromium vlc neovim vim neofetch bat fzf eza zoxide curl jetbrains-mono-fonts lazygit fetchmsttfonts zsh kitty
+sudo zypper in clang rustup lldb fd ripgrep chromium vlc neovim vim fastfetch bat fzf eza zoxide curl jetbrains-mono-fonts lazygit fetchmsttfonts zsh kitty torbrowser-launcher steam-devices
 ```
 
 - Set default shell
