@@ -100,6 +100,10 @@ sudo zypper rm -u evolution polari transmission-gtk patterns-office-office patte
 sudo zypper al evolution polari transmission-gtk patterns-office-office patterns-gnome-gnome_games # etc
 ```
 
+- List of addlocks
+
+cheese evolution gnome-extensions gnome-photos libreoffice opensuse-welcome patterns-desktop-imaging patterns-desktop-multimedia patterns-gnome-gnome_games patterns-gnome-gnome_office patterns-office-office polari transmission-gtk xterm
+
 ## Install deps
 
 ```bash
