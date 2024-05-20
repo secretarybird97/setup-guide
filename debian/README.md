@@ -57,7 +57,7 @@ ln -s /usr/share/systemd/tmp.mount /etc/systemd/system/
 
 ### vm.max_map_count
 
-- Add `vm.max_map_count=1048576` to EOF.
+- Add `vm.max_map_count=1048576` to EOF `/etc/sysctl.conf`.
 
 - Update sysctl
 
@@ -96,7 +96,7 @@ cargo install eza bat zoxide fd-find ripgrep cargo-update
 - pnpm
 
 ```bash
-pnpm add -g typescript ts-node prettier eslint sass less tree-sitter-cli
+pnpm add -g typescript ts-node @angular/cli prettier eslint sass less tree-sitter-cli
 ```
 
 - Install latest Neovim
