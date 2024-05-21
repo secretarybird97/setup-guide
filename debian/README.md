@@ -150,3 +150,27 @@ sudo update-initramfs -k all -c
 ```bash
 sudo apt install openvpn network-manager-openvpn-gnome
 ```
+
+### Firewall
+
+```bashS
+sudo apt install firewalld firewall-config
+```
+
+```bash
+sudo systemctl enable --now firewalld
+```
+
+Create a new zone called `debian` and add the following parameters:
+
+- services: `dhcpv6-client mdns samba-client ssh`
+- ports: 1025-65535/udp 1025-65535/tcp
+
+Make it default zone (make sure it doesn't conflict with other interfaces)
+
+### [KVM](https://wiki.debian.org/KVM)
+
+```bash
+adduser $USER libvirt
+virsh --connect=qemu:///system net-autostart default
+```

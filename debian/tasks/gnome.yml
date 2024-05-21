@@ -1,0 +1,19 @@
+- name: Install gnome packages
+  become: true
+  apt:
+    name:
+      [
+        "gnome-tweaks",
+        "dconf-editor",
+        "openvpn",
+        "network-manager-openvpn-gnome",
+      ]
+  tags:
+    - gnome
+
+- name: Setup flatpak
+  become: true
+  apt:
+    name: ["flatpak", "gnome-software-plugin-flatpak"]
+  tags:
+    - flatpak

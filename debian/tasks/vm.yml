@@ -1,0 +1,13 @@
+- name: Install KVM deps
+  become: true
+  apt:
+    name:
+      [
+        "qemu-system",
+        "libvirt-daemon-system",
+        "virt-manager",
+        "dnsmasq-base",
+        "bridge-utils",
+      ]
+  tags:
+    - kvm

@@ -5,8 +5,9 @@
       [
         "build-essential",
         "cmake",
+        "ca-certificates",
+        "ccache",
         "pkg-config",
-        "cmake",
         "clang",
         "clangd",
         "lldb",
@@ -17,6 +18,8 @@
         "libtool",
         "ninja-build",
         "gettext",
+        "curl",
+        "wget",
       ]
   tags:
     - core

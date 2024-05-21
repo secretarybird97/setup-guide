@@ -1,7 +1,7 @@
 - name: Install tools
   become: true
   apt:
-    name: ["fzf", "curl", "neofetch", "vim", zsh]
+    name: ["fzf", "neofetch", "vim", "zsh", "kitty", "keyutils"]
   tags:
     - tools
 
@@ -31,3 +31,10 @@
       ["fonts-recommended", "ttf-mscorefonts-installer", "fonts-jetbrains-mono"]
   tags:
     - fonts
+
+- name: Install tor browser
+  become: true
+  apt:
+    name: ["torbrowser-launcher"]
+  tags:
+    - tor
