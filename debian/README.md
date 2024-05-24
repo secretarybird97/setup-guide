@@ -3,6 +3,7 @@
 _NOTES:_
 
 - Make sure to use LVM (have a @ / subvolume, and @home /home subvolume. 80 GB for root)
+- Otherwise, use XFS for root fs, and either ext4 or XFS for /boot
 
 ## Pre-installation
 
@@ -78,6 +79,8 @@ sudo systemctl enable fstrim.timer
 - Setup timeshift
 
 Minimum of 2 to 5 per week.
+
+- Add /tmp and /var/lib/flatpak to filters to prevent
 
 ### Dependancies
 
@@ -170,7 +173,23 @@ Make it default zone (make sure it doesn't conflict with other interfaces)
 
 ### [KVM](https://wiki.debian.org/KVM)
 
+- Install deps
+
+```bash
+sudo apt install qemu-system libvirt-daemon-system
+```
+
+- Setup
+
 ```bash
 adduser $USER libvirt
 virsh --connect=qemu:///system net-autostart default
+```
+
+### KDump service
+
+- Install deps
+
+```bash
+sudo apt install kdump-tools crash kexec-tools makedumpfile linux-image-$(uname -r)-dbg
 ```
