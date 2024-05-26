@@ -39,7 +39,7 @@ sudo zramswapon
 - Setup TPM 2.0
 
 ```bash
-sudo zypper in fde-tools tpm2.0-tools
+sudo zypper in fde-tools # tpm2.0-tools
 ```
 
 Follow [this](https://en.opensuse.org/SDB:Encrypted_root_file_system)
@@ -59,9 +59,9 @@ Make it default zone (make sure it doesn't conflict with other interfaces)
 
 - Setup /etc/default/grub
 
-```cfg
+```sh
 GRUB_TIMEOUT=2
-GRUB_TIMEOUT_STYLE=hidden
+# GRUB_TIMEOUT_STYLE=hidden
 ```
 
 - Update grub
@@ -71,6 +71,8 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
 ### Laptop
+
+#### TLP (optional)
 
 - Setup TLP
 
@@ -83,43 +85,58 @@ sudo systemctl status tlp.service
 
 In /etc/tlp.conf change set the following:
 
-```cfg
+```sh
 TLP_ENABLE=1
 RESTORE_DEVICE_STATE_ON_STARTUP=1
 ```
 
 ### Remove bloatware
 
-```bash
-sudo zypper rm -u evolution polari transmission-gtk patterns-office-office patterns-gnome-gnome_games # etc
+```sh
+sudo zypper rm -u cheese evolution gnome-extensions gnome-photos libreoffice opensuse-welcome patterns-desktop-imaging patterns-desktop-multimedia patterns-gnome-gnome_games patterns-gnome-gnome_office patterns-office-office polari transmission-gtk xterm eog gnome-console
 ```
 
 - Make sure to add locks to packages
 
 ```bash
-sudo zypper al evolution polari transmission-gtk patterns-office-office patterns-gnome-gnome_games # etc
+sudo zypper al cheese evolution gnome-extensions gnome-photos libreoffice opensuse-welcome patterns-desktop-imaging patterns-desktop-multimedia patterns-gnome-gnome_games patterns-gnome-gnome_office patterns-office-office polari transmission-gtk xterm eog gnome-console
 ```
 
-- List of addlocks
+- Clean uneeded al
 
-cheese evolution gnome-extensions gnome-photos libreoffice opensuse-welcome patterns-desktop-imaging patterns-desktop-multimedia patterns-gnome-gnome_games patterns-gnome-gnome_office patterns-office-office polari transmission-gtk xterm
+```sh
+sudo zypper cl
+```
+
+- Replace gnome core apps
+
+```sh
+sudo zypper in snapshot loupe gnome-font-viewer gnome-music
+```
 
 ## Install deps
 
-```bash
-sudo zypper in clang rustup lldb fd ripgrep chromium vlc neovim vim fastfetch bat fzf eza zoxide curl jetbrains-mono-fonts lazygit fetchmsttfonts zsh kitty torbrowser-launcher steam-devices
+```sh
+sudo zypper in clang llvm rustup lldb fd ripgrep vlc neovim vim fastfetch bat fzf eza zoxide curl jetbrains-mono-fonts lazygit fetchmsttfonts zsh kitty torbrowser-launcher steam-devices gh google-noto-fonts chezmoi
 ```
 
 - Set default shell
 
-```bash
-chsh -s $(which zsh)
+```sh
+chsh -s $(which zsh) $USER
 ```
 
-And setup Docker, Visual Studio Code, pipx (black, pylint, isort, poetry), nvm, gh cli, bellsoft jdk, sublime text, flatpak, intellij, rust, flatpak etc
+And setup Docker, Visual Studio Code, pipx, python3-devel (black, isort, poetry), nvm, gh cli, bellsoft jdk, sublime text, flatpak, intellij, rust, flatpak etc
 
-NPM dependancies
+- NPM dependancies
 
 ```bash
-pnpm add -g typescript ts-node prettier eslint sass less neovim tree-sitter-cli
+pnpm add -g typescript ts-node prettier eslint sass less neovim tree-sitter-cli @angular/cli tldr
+```
+
+- pipx dependancies
+
+```sh
+pipx install poetry
+# black, isort, thefuck
 ```

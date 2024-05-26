@@ -1,7 +1,29 @@
 # Base setup
 
+## Git
+
 ```bash
 git config --global user.email "81328194+secretarybird97@users.noreply.github.com" && git config --global user.name "secretarybird97" && git config --global credential.helper cache --timeout=3600
+```
+
+- Once GitHub CLI is installed
+
+```sh
+gh auth login && gh auth setup-git
+```
+
+## Dotfiles
+
+- Chezmoi not provided by distro
+
+```sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply secretarybird97
+```
+
+- Else
+
+```sh
+chezmoi init https://github.com/secretarybird97/dotfiles.git
 ```
 
 ## SSH Keys
