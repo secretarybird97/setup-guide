@@ -1,4 +1,4 @@
-# Debian Installation Guide
+# openSUSE Installation Guide
 
 ## Pre-installation
 

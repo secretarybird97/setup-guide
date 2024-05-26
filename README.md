@@ -11,7 +11,7 @@ git config --global user.email "81328194+secretarybird97@users.noreply.github.co
 - Generate new pair
 
 ```bash
-ssh-keygen -t ed25519 -C 81328194+secretarybird97@users.noreply.github.com
+ssh-keygen -t ed25519 -C "81328194+secretarybird97@users.noreply.github.com"
 ```
 
 - Start ssh-agent
