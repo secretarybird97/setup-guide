@@ -93,13 +93,13 @@ RESTORE_DEVICE_STATE_ON_STARTUP=1
 ### Remove bloatware
 
 ```sh
-sudo zypper rm -u cheese evolution gnome-extensions gnome-photos libreoffice opensuse-welcome patterns-desktop-imaging patterns-desktop-multimedia patterns-gnome-gnome_games patterns-gnome-gnome_office patterns-office-office polari transmission-gtk xterm eog gnome-console
+sudo zypper rm -u cheese evolution gnome-extensions gnome-photos libreoffice opensuse-welcome patterns-desktop-imaging patterns-desktop-multimedia patterns-gnome-gnome_games patterns-gnome-gnome_office patterns-office-office polari transmission-gtk eog gnome-console
 ```
 
 - Make sure to add locks to packages
 
 ```bash
-sudo zypper al cheese evolution gnome-extensions gnome-photos libreoffice opensuse-welcome patterns-desktop-imaging patterns-desktop-multimedia patterns-gnome-gnome_games patterns-gnome-gnome_office patterns-office-office polari transmission-gtk xterm eog gnome-console
+sudo zypper al cheese evolution gnome-extensions gnome-photos libreoffice opensuse-welcome patterns-desktop-imaging patterns-desktop-multimedia patterns-gnome-gnome_games patterns-gnome-gnome_office patterns-office-office polari transmission-gtk eog gnome-console
 ```
 
 - Clean uneeded al
