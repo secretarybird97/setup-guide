@@ -80,14 +80,21 @@ sudo systemctl enable fstrim.timer
 
 Minimum of 2 to 5 per week.
 
-- Add /tmp and /var/lib/flatpak to filters to prevent
+- Exclude the following:
+  - /boot/grub2/x86_64-efi, /boot/grub2/i386-pc
+  - /home
+  - /opt
+  - /srv
+  - /tmp
+  - /usr/local
+  - /var
 
 ### Dependancies
 
 - Install deps
 
 ```bash
-sudo apt install git build-essential pkg-config libssl-dev cmake clang clangd lldb apt-transport-https fzf unzip libtool ninja-build gettext python3-pip pipx fonts-recommended ttf-mscorefonts-installer fonts-jetbrains-mono libavcodec-extra vlc firewalld firewall-config neofetch curl zsh
+sudo apt install git build-essential pkg-config libssl-dev cmake clang llvm clangd lldb apt-transport-https fzf unzip libtool ninja-build gettext python3-pip pipx fonts-recommended ttf-mscorefonts-installer fonts-jetbrains-mono libavcodec-extra vlc firewalld firewall-config neofetch curl zsh
 ```
 
 - cargo
@@ -99,7 +106,7 @@ cargo install eza bat zoxide fd-find ripgrep cargo-update
 - pnpm
 
 ```bash
-pnpm add -g typescript ts-node @angular/cli prettier eslint sass less tree-sitter-cli
+pnpm add -g typescript ts-node @angular/cli prettier eslint sass less tree-sitter-cli tldr
 ```
 
 - Install latest Neovim
