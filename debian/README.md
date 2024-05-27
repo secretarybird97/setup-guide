@@ -94,7 +94,13 @@ Minimum of 2 to 5 per week.
 - Install deps
 
 ```bash
-sudo apt install git build-essential pkg-config libssl-dev cmake clang llvm clangd lldb apt-transport-https fzf unzip libtool ninja-build gettext python3-pip pipx fonts-recommended ttf-mscorefonts-installer fonts-jetbrains-mono libavcodec-extra vlc firewalld firewall-config neofetch curl zsh
+sudo apt install git build-essential ca-certificates pkg-config libssl-dev cmake clang llvm clangd lldb apt-transport-https fzf unzip libtool ninja-build gettext python3-pip pipx fonts-recommended ttf-mscorefonts-installer fonts-noto fonts-jetbrains-mono libavcodec-extra vlc neofetch curl zsh steam-devices torbrowser-launcher timeshift kitty
+```
+
+- gnome
+
+```bash
+sudo apt install gnome-tweaks dconf-editor
 ```
 
 - cargo
@@ -116,6 +122,29 @@ git clone https://github.com/neovim/neovim
 cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 ```
+
+#### [Flatpak](https://www.flatpak.org/setup/Debian)
+
+- Install
+
+```bash
+sudo apt install flatpak
+```
+
+- Gnome backend
+
+```bash
+sudo apt install gnome-software-plugin-flatpak
+```
+
+- Add flathub repo
+
+```bash
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
+
+- Apps:
+  Obsidian, qBittorrent, Thunderbird, Flatseal, Warehouse, Gear Lever, Steam, etc.
 
 ### CryptSetup
 
@@ -163,7 +192,7 @@ sudo apt install openvpn network-manager-openvpn-gnome
 
 ### Firewall
 
-```bashS
+```bash
 sudo apt install firewalld firewall-config
 ```
 
@@ -183,7 +212,7 @@ Make it default zone (make sure it doesn't conflict with other interfaces)
 - Install deps
 
 ```bash
-sudo apt install qemu-system libvirt-daemon-system
+sudo apt install qemu-system libvirt-daemon-system virt-manager dnsmasq-base bridge-utils
 ```
 
 - Setup
