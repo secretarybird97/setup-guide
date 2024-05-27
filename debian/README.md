@@ -193,10 +193,11 @@ adduser $USER libvirt
 virsh --connect=qemu:///system net-autostart default
 ```
 
-### KDump service
+### KDump service (optional)
 
 - Install deps
 
 ```bash
-sudo apt install kdump-tools crash kexec-tools makedumpfile linux-image-$(uname -r)-dbg
+# change architecture if necessary
+sudo apt install kdump-tools crash kexec-tools makedumpfile linux-image-amd64-dbg
 ```
