@@ -4,6 +4,7 @@ _NOTES:_
 
 - Make sure to use LVM (have a @ / subvolume, and @home /home subvolume. 80 GB for root)
 - Otherwise, use XFS for root fs, and either ext4 or XFS for /boot
+- [How To Secure A Linux Server](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server)
 
 ## Pre-installation
 
@@ -25,6 +26,14 @@ sudo apt install nala
 
 ```bash
 sudo nala fetch
+```
+
+#### Parallel downloads
+
+- Add the following to `/etc/apt/apt.conf.d/99parallel`
+
+```bash
+Acquire::Queue-Mode "host";
 ```
 
 ### Desktop environment
