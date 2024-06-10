@@ -3,7 +3,7 @@
 ## Git
 
 ```bash
-git config --global user.email "81328194+secretarybird97@users.noreply.github.com" && git config --global user.name "secretarybird97" && git config --global credential.helper cache --timeout=3600
+git config --global user.email "81328194+secretarybird97@users.noreply.github.com" && git config --global user.name "Miguel A. Cuevas G." && git config --global credential.helper cache --timeout=3600
 ```
 
 - Once GitHub CLI is installed
